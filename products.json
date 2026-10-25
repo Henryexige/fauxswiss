@@ -1,0 +1,30 @@
+[
+  {
+    "handle": "sample-one",
+    "title": "Sample Product One",
+    "description": "Placeholder description. Real products will come from Shopify.",
+    "image": "",
+    "variants": [
+      { "title": "Default", "sku": "FS-001", "price": "129.00", "available": true }
+    ]
+  },
+  {
+    "handle": "sample-two",
+    "title": "Sample Product Two",
+    "description": "Placeholder description. Real products will come from Shopify.",
+    "image": "",
+    "variants": [
+      { "title": "Blue", "sku": "FS-002-BLU", "price": "149.00", "available": true },
+      { "title": "Black", "sku": "FS-002-BLK", "price": "149.00", "available": false }
+    ]
+  },
+  {
+    "handle": "sample-three",
+    "title": "Sample Product Three",
+    "description": "Placeholder description. Real products will come from Shopify.",
+    "image": "",
+    "variants": [
+      { "title": "Default", "sku": "FS-003", "price": "199.00", "available": true }
+    ]
+  }
+]
