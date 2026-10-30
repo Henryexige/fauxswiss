@@ -2,22 +2,172 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+<meta name="google" content="notranslate">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0047ab">
   <title>Faux Swiss</title>
-  <meta name="description" content="Faux Swiss — browse the collection.">
-  <link rel="icon" href="logo.jpg">
+  <meta name="description" content="Faux Swiss — Swiss-inspired watches. Browse the collection and get in touch to enquire.">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:image" content="https://fauxswiss.cc/og-image.webp">
+  <meta property="og:title" content="Faux Swiss">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="top">
-    <a class="brand" href="#/"><img src="logo.jpg" alt="Faux Swiss"></a>
-    <nav><a href="#/">Collection</a><a href="#/visit">Visit</a></nav>
+  <div class="announce" id="announce" hidden></div>
+
+  <header class="bar" id="bar">
+    <button type="button" class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+
+    <a class="brand" href="#top" aria-label="Faux Swiss home"><img src="logo-mark.png" alt="" width="29" height="48"><span id="brandName">Faux Swiss</span></a>
+
+    <nav aria-label="Main" id="mainNav">
+      <div class="menu">
+        <button type="button" class="nav-link" id="navBest" aria-expanded="false" aria-controls="menuBest"><span data-i18n="bestSellers">Best sellers</span> <span aria-hidden="true">▾</span></button>
+        <ul class="drop" id="menuBest" hidden></ul>
+      </div>
+      <!-- Custom Workshop Edition hidden (Henry, 2026-10-29): it is a client modification service, may get its own site. Remove "hidden" to show it again -->
+      <div class="menu" hidden>
+        <button type="button" class="nav-link" id="navCw" aria-expanded="false" aria-controls="menuCw"><span data-i18n="cw">Custom Workshop Edition</span> <span aria-hidden="true">▾</span></button>
+        <ul class="drop" id="menuCw" hidden></ul>
+      </div>
+      <div class="menu">
+        <button type="button" class="nav-link" id="navBrands" aria-expanded="false" aria-controls="menuBrands"><span data-i18n="brands">Brands</span> <span aria-hidden="true">▾</span></button>
+        <ul class="drop" id="menuBrands" hidden></ul>
+      </div>
+      <button type="button" class="nav-link" id="navHer" data-i18n="forHer">For Her</button>
+      <!-- Accessories hidden for now (Henry, 2026-10-29): remove the "hidden" attribute to show it again -->
+      <div class="menu" hidden>
+        <button type="button" class="nav-link" id="navAcc" aria-expanded="false" aria-controls="menuAcc"><span data-i18n="accessories">Accessories</span> <span aria-hidden="true">▾</span></button>
+        <ul class="drop" id="menuAcc" hidden></ul>
+      </div>
+      <a class="nav-link" id="navJournal" href="#journal" data-i18n="journal" hidden>Journal</a>
+    </nav>
+
+    <div class="right">
+      <form class="search" id="searchForm" role="search" autocomplete="off">
+        <label class="sr-only" for="q" data-i18n="search">Search</label>
+        <input id="q" type="search" placeholder="Search" data-i18n-ph="search" autocomplete="off" autocapitalize="off" spellcheck="false"
+               role="combobox" aria-expanded="false" aria-controls="sugg" aria-autocomplete="list" enterkeyhint="search">
+        <ul class="sugg" id="sugg" role="listbox" hidden></ul>
+      </form>
+      <button type="button" class="icon-btn" id="searchToggle" aria-label="Search" data-i18n-aria="search" aria-expanded="false" aria-controls="searchForm">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      </button>
+      <div class="langwrap">
+        <button type="button" class="icon-btn" id="langBtn" aria-label="Language" data-i18n-aria="language" aria-expanded="false" aria-controls="langMenu">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+        </button>
+        <ul class="drop lang-menu" id="langMenu" translate="no" hidden></ul>
+      </div>
+      <a class="icon-btn" id="waLink" href="#visit" aria-label="Contact on WhatsApp" hidden>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9.5c.5 2.5 3 5 5.5 5.5l1.5-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2z"/></svg>
+      </a>
+    </div>
   </header>
 
-  <main id="app" aria-live="polite"></main>
+  <main id="top">
+    <section id="productPage" class="wrap pdp" aria-labelledby="dTitle" hidden>
+      <nav class="pnav" aria-label="Product">
+        <a class="pback" id="pBack" href="/#collection">‹ <span data-i18n="backToCollection">Back to the collection</span></a>
+        <ol class="crumbs" id="pCrumbs"></ol>
+        <span class="pstep"><a id="pPrev" href="#" rel="prev">‹ <span data-i18n="prev">Previous</span></a><a id="pNext" href="#" rel="next"><span data-i18n="next">Next</span> ›</a></span>
+      </nav>
+      <div class="dlg-body">
+        <div class="dlg-img" id="dImg"></div>
+        <div class="dlg-info">
+          <p class="pk" id="dKick"></p>
+          <h1 id="dTitle"></h1>
+          <p class="price" id="dPrice"></p>
+          <div class="opts" id="dOpts" role="group" aria-label="Options"></div>
+          <a class="btn" id="dBuy" href="#">Enquire</a>
+          <p class="meta" id="dMeta"></p>
+          <div class="acc">
+            <details open><summary data-i18n="accDetails">Details</summary><div><p id="dDesc"></p><dl class="facts" id="dFacts" hidden></dl></div></details>
+            <details id="accSize" hidden><summary data-i18n="accSize">Size &amp; fit</summary><div id="sizeBody"></div></details>
+            <details id="accStrap" hidden><summary id="strapTitle">Strap size guide</summary><div id="strapBody"></div></details>
+            <details id="accMat" hidden><summary data-i18n="accMat">Materials</summary><div><dl class="facts" id="matList"></dl></div></details>
+            <details id="accShip" hidden><summary data-i18n="accShipping">Shipping &amp; returns</summary><div><p data-i18n="accShippingText">Delivery options and times depend on your country and are confirmed when you enquire. Returns and refunds follow the consumer rules of your country, and we explain them before you buy.</p></div></details>
+            <details id="accCare" hidden><summary data-i18n="accCare">Care</summary><div><p data-i18n="accCareText">Keep your watch dry unless the manufacturer states it is water resistant, away from strong magnets and knocks, and have it serviced as the manufacturer recommends.</p></div></details>
+          </div>
+          <p class="cnote" id="dNote" data-i18n="catalogNote" hidden></p>
+        </div>
+      </div>
+      <section class="explore" id="pExplore" hidden>
+        <h2 data-i18n="exploreTitle">Go deeper</h2>
+        <div class="xgrid" id="xGrid"></div>
+      </section>
+      <section class="related" id="pRelated" hidden>
+        <h2 data-i18n="moreFrom">You may also like</h2>
+        <div class="grid" id="pGrid"></div>
+        <p class="rmore"><a class="btn" href="/#collection" data-i18n="browse">Browse the collection</a></p>
+      </section>
+    </section>
 
-  <footer>© <span id="yr"></span> Faux Swiss</footer>
+    <section class="hero" id="hero">
+      <div class="hero-media" id="heroMedia" aria-hidden="true"></div>
+      <p class="eyebrow" data-i18n="newCollection">New collection</p>
+      <h1 id="tagline"></h1>
+      <p class="lede" id="intro"></p>
+      <a class="btn" href="#collection" data-i18n="browse">Browse the collection</a>
+    </section>
+
+    <div class="rows" id="carousels"></div>
+
+    <section id="collection" class="wrap" aria-labelledby="colTitle">
+      <h2 id="colTitle">Collection</h2>
+      <p class="showing" id="showing" hidden><span id="showingText"></span> <button type="button" id="clearFilters" data-i18n="clear">Clear</button></p>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden></p>
+    </section>
+
+    <section id="delivery" class="wrap" aria-labelledby="mapTitle" hidden>
+      <h2 id="mapTitle">Worldwide delivery</h2>
+      <figure class="map">
+        <div class="map-scroll" id="mapScroll"><svg id="worldMap" role="img" aria-labelledby="mapCap"></svg></div>
+        <p class="swipe-hint" data-i18n="swipe">Swipe to explore the map</p>
+        <figcaption id="mapCap"></figcaption>
+      </figure>
+    </section>
+
+    <section id="journal" class="wrap journal" aria-labelledby="journalTitle" hidden>
+      <h2 id="journalTitle" data-i18n="journal">Journal</h2>
+      <p class="jsub" data-i18n="journalSub">Short reads on watch knowledge. No sales, just good information.</p>
+      <div class="jgrid" id="jgrid"></div>
+      <p class="jmore"><a href="/journal/" data-i18n="allArticles">All articles</a></p>
+    </section>
+
+    <section id="visit" class="wrap visit" aria-labelledby="visitTitle">
+      <h2 id="visitTitle" data-i18n="visit">Visit &amp; contact</h2>
+      <div class="visit-grid">
+        <div><h3 data-i18n="store">Store</h3><p id="address"></p></div>
+        <div><h3 data-i18n="hours">Hours</h3><p id="hours"></p></div>
+        <div><h3 data-i18n="touch">Get in touch</h3><p id="contactLine"></p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© <span id="yr"></span> <span id="footBrand"></span><span id="footAddr"></span></span><span><span data-legal="privacy"><a href="/privacy/" data-i18n="privacy">Privacy</a> · </span><span data-legal="warranty"><a href="/warranty/" data-i18n="warranty">Warranty</a> · </span><a href="#visit" data-i18n="visit">Visit &amp; contact</a><span id="social"></span></span></footer>
+  <div class="footlang"><label for="footLang" data-i18n="langLabel">Language</label><select id="footLang"></select></div>
+  <p class="disclaimer" id="catNote" data-i18n="catalogNote" hidden></p>
+  <p class="disclaimer" id="disclaimer" data-i18n="disclaimer">Faux Swiss is an independent watch reseller. We are not an authorised dealer for, and are not affiliated with, endorsed by or sponsored by, any brand named on this site. All brand names, logos and trademarks belong to their respective owners and are used for identification only.</p>
+
+  <dialog id="consent" aria-labelledby="cTitle">
+    <h3 id="cTitle" data-i18n="locTitle">Optional: where are you contacting us from?</h3>
+    <p id="cText" data-i18n="locText">May we record the country and city your enquiry comes from? We store only the place name (never your IP address, name or message), to understand where our customers are.</p>
+    <p class="cmore"><a href="/privacy/" data-i18n="privacy">Privacy</a></p>
+    <div class="cbtns"><button type="button" class="btn solid" id="cYes" data-i18n="locYes">Allow</button><button type="button" class="btn ghost" id="cNo" data-i18n="locNo">No thanks, continue</button></div>
+  </dialog>
+
+
   <script src="config.js"></script>
+  <script src="i18n.js"></script>
+  <script src="map-data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -1,10 +1,14 @@
+// Edit this file to change the site text and contact details.
 window.CONFIG = {
   brand: "Faux Swiss",
   tagline: "Swiss-inspired design. Made for every day.",
   intro: "A curated collection of watches you can wear every day. Browse the range, then get in touch to enquire.",
   currency: "USD",
 
+  // Rotating product carousels under the hero. One row per brand listed here (3 is plenty).
+  // Product page photos turn by themselves when true (off: Henry found it dizzy, 2026-10-29).
   autoSlide: false,
+  // Strap size charts, shown on product pages that set  strapGuide: "<name>".  (Henry's chart, 2026-10-29)
   strapGuides: {
     "daytona-oysterflex": {
       title: "Strap size guide",
@@ -21,6 +25,8 @@ window.CONFIG = {
   },
   carousels: { brands: ["Rolex", "Patek Philippe", "Audemars Piguet"], seconds: 4 },
 
+  // World delivery map: animated lines from the hub to each city. Remove "map" to hide the section.
+  // Every city gets its name on the map. "big": true places that name first, so it gets the best spot.
   map: {
     title: "Worldwide delivery",
     caption: "Shipped from Hong Kong to customers around the world.",
@@ -49,41 +55,53 @@ window.CONFIG = {
     ]
   },
 
+  // Shown under the search box when it is empty. Use words that match your products.
   popularSearches: ["Best sellers", "Sport", "Classic", "Rolex", "For her"],
 
+  // Thin bar at the very top. Leave empty to hide it.
+  // Which legal pages are visible (hidden while the lawyer reviews them; see content/legal.json)
+  // Page tints for products. A product or an option names one with "theme": "green". bg = page, soft = panels, accent = buttons and links.
   themes: {
-    blue: { bg: "#e8f1fc", soft: "#f3f8fe", accent: "#1a56b0", deep: "#0f3d85", line: "#c8dbf2" },
-    green: { bg: "#e6f4ec", soft: "#f2faf5", accent: "#1f7a4f", deep: "#135a38", line: "#c4e2d1" },
-    red: { bg: "#fbe9ec", soft: "#fdf4f5", accent: "#a3293c", deep: "#7a1c2c", line: "#efc9cf" },
-    grey: { bg: "#eceef2", soft: "#f6f7f9", accent: "#3a3f4d", deep: "#20242e", line: "#d3d6de" },
-    brown: { bg: "#f6ede2", soft: "#fbf6ef", accent: "#8a5a2b", deep: "#653f1a", line: "#e6d3bb" },
-    teal: { bg: "#e4f4f6", soft: "#f1fafb", accent: "#17788f", deep: "#0f5668", line: "#c1e1e7" },
+    blue:   { bg: "#e8f1fc", soft: "#f3f8fe", accent: "#1a56b0", deep: "#0f3d85", line: "#c8dbf2" },
+    green:  { bg: "#e6f4ec", soft: "#f2faf5", accent: "#1f7a4f", deep: "#135a38", line: "#c4e2d1" },
+    red:    { bg: "#fbe9ec", soft: "#fdf4f5", accent: "#a3293c", deep: "#7a1c2c", line: "#efc9cf" },
+    grey:   { bg: "#eceef2", soft: "#f6f7f9", accent: "#3a3f4d", deep: "#20242e", line: "#d3d6de" },
+    brown:  { bg: "#f6ede2", soft: "#fbf6ef", accent: "#8a5a2b", deep: "#653f1a", line: "#e6d3bb" },
+    teal:   { bg: "#e4f4f6", soft: "#f1fafb", accent: "#17788f", deep: "#0f5668", line: "#c1e1e7" },
     purple: { bg: "#efe9f8", soft: "#f7f3fc", accent: "#6a3fa8", deep: "#4b2a7c", line: "#d9cdee" },
     silver: { bg: "#eef0f3", soft: "#f7f8fa", accent: "#5b6575", deep: "#3e4655", line: "#d8dce3" }
   },
-  showShippingCare: false,
-  catalogMode: true,
-  showPrices: false,
+  showShippingCare: false,   // true adds the generic Shipping & returns and Care sections to every product page
+  catalogMode: true,   // collection only: no prices or stock claims, enquire for details
+  showPrices: false,   // true shows prices again on cards and product pages
   legalPages: { privacy: true, warranty: false },
   announcement: ["Enquiries via WhatsApp", "Concierge service", "Fast replies"],
 
+  // Hero media. Put your files in the site folder and set the file names here.
+  // images: up to 3 photos shown side by side, like a collage.
+  // Or a single "src" with type "image" or "video" (video: "poster" is the still shown while it loads).
   hero: { type: "image", src: "", poster: "", images: [] },
 
+  // Brands shown in the Brands and Best sellers menus. Rename these when you have real brands.
   brands: ["Rolex", "Patek Philippe", "Audemars Piguet", "Richard Mille", "Vacheron Constantin", "Omega", "Panerai", "Cartier", "DiW"],
 
+  // Brands listed in the Best sellers menu (after "All best sellers").
+  // Collections shown under each brand in the Brands menu, in this order. A brand not listed here shows the collections found in its products.
   brandCollections: {
     "Rolex": ["Daytona", "Datejust 31", "Datejust 36", "Datejust 41", "Day-Date 40", "GMT-Master II", "Submariner", "Land-Dweller", "Sky-Dweller", "Oyster Perpetual 36", "Oyster Perpetual 41", "Yacht-Master"],
     "Patek Philippe": ["Nautilus", "Aquanaut"],
     "Audemars Piguet": ["Royal Oak", "Royal Oak Offshore 44", "Royal Oak Offshore Diver", "Royal Oak Mini"]
   },
   customBrands: ["Brand A", "Brand B", "Brand C", "Brand D"],
+  // Four categories shown under every best-seller brand. Rename freely; each product picks one with "subcategory": 1-4 in products.json.
   bestSellerCategories: ["Category 1", "Category 2", "Category 3", "Category 4"],
   bestSellerBrands: ["Rolex", "Patek Philippe", "Audemars Piguet", "Richard Mille", "Vacheron Constantin", "Omega"],
 
+  // How customers buy. Set "type" to "whatsapp", "email" or "visit".
   contact: {
-    type: "whatsapp",
-    whatsapp: "85252179149", // <--- CHANGE THIS to your real number (no + or spaces)
-    email: "hello@fauxswiss.cc", 
+    type: "visit",
+    whatsapp: "",              // e.g. "60123456789" (country code, no + or spaces)
+    email: "",                 // e.g. "hello@fauxswiss.cc"
     buttonLabel: "Enquire about this piece"
   },
 

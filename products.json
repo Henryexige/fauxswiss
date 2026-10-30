@@ -2,29 +2,223 @@
   {
     "handle": "sample-one",
     "title": "Sample Product One",
-    "description": "Placeholder description. Real products will come from Shopify.",
+    "brand": "Rolex",
+    "collection": "Classic",
+    "bestSeller": true,
+    "description": "A classic dress watch with a stainless steel case and a leather strap.",
     "image": "",
     "variants": [
-      { "title": "Default", "sku": "FS-001", "price": "129.00", "available": true }
-    ]
+      {
+        "title": "Default",
+        "sku": "FS-001",
+        "price": "129.00",
+        "available": true
+      }
+    ],
+    "for": "him"
   },
   {
     "handle": "sample-two",
     "title": "Sample Product Two",
-    "description": "Placeholder description. Real products will come from Shopify.",
+    "brand": "Rolex",
+    "collection": "Sport",
+    "bestSeller": false,
+    "description": "A sporty chronograph with a rotating bezel, luminous dial and a water-resistant case.",
     "image": "",
     "variants": [
-      { "title": "Blue", "sku": "FS-002-BLU", "price": "149.00", "available": true },
-      { "title": "Black", "sku": "FS-002-BLK", "price": "149.00", "available": false }
-    ]
+      {
+        "title": "Blue",
+        "sku": "FS-002-BLU",
+        "price": "149.00",
+        "available": true
+      },
+      {
+        "title": "Black",
+        "sku": "FS-002-BLK",
+        "price": "149.00",
+        "available": false
+      }
+    ],
+    "for": "her"
   },
   {
     "handle": "sample-three",
     "title": "Sample Product Three",
-    "description": "Placeholder description. Real products will come from Shopify.",
+    "brand": "Patek Philippe",
+    "collection": "Classic",
+    "bestSeller": true,
+    "description": "A slim automatic watch with a sapphire crystal and a polished steel bracelet.",
     "image": "",
     "variants": [
-      { "title": "Default", "sku": "FS-003", "price": "199.00", "available": true }
-    ]
+      {
+        "title": "Default",
+        "sku": "FS-003",
+        "price": "199.00",
+        "available": true
+      }
+    ],
+    "for": "him"
+  },
+  {
+    "handle": "sample-four",
+    "title": "Sample Product Four",
+    "brand": "Patek Philippe",
+    "collection": "Sport",
+    "bestSeller": false,
+    "description": "An elegant everyday watch with a mother-of-pearl dial and a quartz movement.",
+    "image": "",
+    "variants": [
+      {
+        "title": "Default",
+        "sku": "FS-004",
+        "price": "219.00",
+        "available": true
+      }
+    ],
+    "for": "him"
+  },
+  {
+    "handle": "sample-five",
+    "title": "Sample Product Five",
+    "brand": "Audemars Piguet",
+    "collection": "Classic",
+    "bestSeller": true,
+    "description": "A classic dress watch with a stainless steel case and a leather strap.",
+    "image": "",
+    "variants": [
+      {
+        "title": "Default",
+        "sku": "FS-005",
+        "price": "169.00",
+        "available": true
+      }
+    ],
+    "for": "her"
+  },
+  {
+    "handle": "sample-six",
+    "title": "Sample Product Six",
+    "brand": "Audemars Piguet",
+    "collection": "Sport",
+    "bestSeller": false,
+    "description": "A sporty chronograph with a rotating bezel, luminous dial and a water-resistant case.",
+    "image": "",
+    "variants": [
+      {
+        "title": "Default",
+        "sku": "FS-006",
+        "price": "239.00",
+        "available": true
+      }
+    ],
+    "for": "her"
+  },
+  {
+    "handle": "sample-seven",
+    "title": "Sample Product Seven",
+    "brand": "Rolex",
+    "collection": "Classic",
+    "bestSeller": false,
+    "description": "A slim automatic watch with a sapphire crystal and a polished steel bracelet.",
+    "image": "",
+    "variants": [
+      {
+        "title": "Default",
+        "sku": "FS-007",
+        "price": "197.00",
+        "available": true
+      }
+    ],
+    "for": "him"
+  },
+  {
+    "handle": "sample-eight",
+    "title": "Sample Product Eight",
+    "brand": "Rolex",
+    "collection": "Sport",
+    "bestSeller": false,
+    "description": "An elegant everyday watch with a mother-of-pearl dial and a quartz movement.",
+    "image": "",
+    "variants": [
+      {
+        "title": "Default",
+        "sku": "FS-008",
+        "price": "208.00",
+        "available": true
+      }
+    ],
+    "for": "him"
+  },
+  {
+    "handle": "sample-nine",
+    "title": "Sample Product Nine",
+    "brand": "Patek Philippe",
+    "collection": "Classic",
+    "bestSeller": true,
+    "description": "A classic dress watch with a stainless steel case and a leather strap.",
+    "image": "",
+    "variants": [
+      {
+        "title": "Default",
+        "sku": "FS-009",
+        "price": "219.00",
+        "available": true
+      }
+    ],
+    "for": "her"
+  },
+  {
+    "handle": "sample-ten",
+    "title": "Sample Product Ten",
+    "brand": "Patek Philippe",
+    "collection": "Sport",
+    "bestSeller": false,
+    "description": "A sporty chronograph with a rotating bezel, luminous dial and a water-resistant case.",
+    "image": "",
+    "variants": [
+      {
+        "title": "Default",
+        "sku": "FS-010",
+        "price": "230.00",
+        "available": true
+      }
+    ],
+    "for": "him"
+  },
+  {
+    "handle": "sample-eleven",
+    "title": "Sample Product Eleven",
+    "brand": "Audemars Piguet",
+    "collection": "Classic",
+    "bestSeller": true,
+    "description": "A slim automatic watch with a sapphire crystal and a polished steel bracelet.",
+    "image": "",
+    "variants": [
+      {
+        "title": "Default",
+        "sku": "FS-011",
+        "price": "241.00",
+        "available": true
+      }
+    ],
+    "for": "him"
+  },
+  {
+    "handle": "sample-twelve",
+    "title": "Sample Product Twelve",
+    "brand": "Audemars Piguet",
+    "collection": "Sport",
+    "bestSeller": false,
+    "description": "An elegant everyday watch with a mother-of-pearl dial and a quartz movement.",
+    "image": "",
+    "variants": [
+      {
+        "title": "Default",
+        "sku": "FS-012",
+        "price": "252.00",
+        "available": true
+      }
+    ],
+    "for": "her"
   }
 ]
