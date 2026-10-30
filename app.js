@@ -1042,7 +1042,7 @@ function reportEnquiry(source) {
   if (getLoc() !== "yes") return;
   const product = cur && onProduct() ? cur.p.handle : "";
   try {
-    "https://fauxswiss-api.cheekhin.workers.dev", { method: "POST", headers: { "content-type": "application/json" }, keepalive: true,
+      fetch("https://fauxswiss-api.cheekhin.workers.dev", { method: "POST", headers: { "content-type": "application/json" }, keepalive: true,
       body: JSON.stringify({ consent: true, product, source: product ? "product" : source, lang }) }).catch(() => {});
   } catch {}
 }
