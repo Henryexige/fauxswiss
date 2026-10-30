@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faux Swiss</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Clean layout so it doesn't break */
+    body { margin: 0; font-family: 'Montserrat', sans-serif; background: #f7f9fc; color: #0b1220; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+    .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: white; border-bottom: 1px solid #dde5f0; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #0b1220; }
+    .whatsapp-btn { background: #25D366; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: 700; font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+    .card { background: white; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .card img { width: 100%; height: 300px; object-fit: cover; background: #eaf6fc; }
+    .card-info { padding: 20px; }
+    .card h3 { margin: 0 0 10px 0; font-family: 'Cormorant Garamond', serif; font-size: 20px; }
+    .card p { color: #5d6b80; margin: 0; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="#" class="logo">Faux Swiss</a>
+    <!-- Direct link, no hidden attributes -->
+    <a href="https://wa.me/85252179149" target="_blank" class="whatsapp-btn">Enquire on WhatsApp</a>
+  </header>
+
+  <main class="wrap">
+    <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 48px; text-align: center;">The Collection</h1>
+    
+    <!-- The JavaScript will inject the watches here -->
+    <div class="grid" id="product-grid">
+      <p>Loading collection...</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
