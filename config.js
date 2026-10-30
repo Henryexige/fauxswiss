@@ -98,12 +98,7 @@ window.CONFIG = {
   bestSellerBrands: ["Rolex", "Patek Philippe", "Audemars Piguet", "Richard Mille", "Vacheron Constantin", "Omega"],
 
   // How customers buy. Set "type" to "whatsapp", "email" or "visit".
-    contact: {
-    type: "whatsapp",
-    whatsapp: "85252179149",
-    email: "",
-    buttonLabel: "Enquire about this watch"
-  },
+  legalPages: { privacy: true, warranty: false },
   },
 
   store: {
