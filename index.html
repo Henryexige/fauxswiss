@@ -169,5 +169,31 @@
   <script src="i18n.js?v=2"></script>
   <script src="map-data.js?v=2"></script>
   <script src="app.js?v=2"></script>
+  <script>
+  document.addEventListener('click', function(e) {
+    const waLink = e.target.closest('a[href^="https://wa.me/"]');
+    if (waLink) {
+      if (localStorage.getItem('fs.loc_asked') === 'yes') return; 
+      
+      e.preventDefault();
+      const wantsToShare = confirm("May we record your country and city to see where our customers are?");
+      
+      if (wantsToShare) {
+        localStorage.setItem('fs.loc_asked', 'yes');
+        fetch('https://fauxswiss-api.cheekhin.workers.dev', {
+          method: 'POST',
+          headers: {'content-type': 'application/json'},
+          body: JSON.stringify({ consent: true, product: 'website', source: 'link', lang: 'en' })
+        }).finally(() => {
+          window.location.href = waLink.href;
+        });
+      } else {
+        localStorage.setItem('fs.loc_asked', 'no');
+        window.location.href = waLink.href;
+      }
+    }
+  });
+  </script>
+
 </body>
 </html>
