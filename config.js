@@ -100,7 +100,7 @@ window.CONFIG = {
   // How customers buy. Set "type" to "whatsapp", "email" or "visit".
   contact: {
     type: "visit",
-    whatsapp: "",              // e.g. "60123456789" (country code, no + or spaces)
+    whatsapp: "",              // e.g. "85252179149" (country code, no + or spaces)
     email: "",                 // e.g. "hello@fauxswiss.cc"
     buttonLabel: "Enquire about this piece"
   },
