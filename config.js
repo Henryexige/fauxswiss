@@ -109,5 +109,15 @@ window.CONFIG = {
   social: {
     instagram: "",
     facebook: ""
-  }
+  },
+
+  contact: {
+    type: "whatsapp",
+    whatsapp: "85252179149",
+    email: "",
+    buttonLabel: "Enquire about this piece"
+  },
+
+  legalPages: { privacy: true, warranty: false }
 };
+
