@@ -169,31 +169,38 @@
   <script src="i18n.js?v=2"></script>
   <script src="map-data.js?v=2"></script>
   <script src="app.js?v=2"></script>
-  <script>
+<script>
+  // Simple WhatsApp Enquiry Tracker
   document.addEventListener('click', function(e) {
-    const waLink = e.target.closest('a[href^="https://wa.me/"]');
-    if (waLink) {
-      if (localStorage.getItem('fs.loc_asked') === 'yes') return; 
+    const link = e.target.closest('a');
+    if (link && link.href && link.href.includes('wa.me')) {
       
+      // Check if we already asked them
+      if (localStorage.getItem('enquiry_asked')) return;
+
+      // Stop the link from opening immediately
       e.preventDefault();
-      const wantsToShare = confirm("May we record your country and city to see where our customers are?");
+
+      // Ask for permission
+      const allowed = confirm("May we record your country and city to see where our customers are?");
       
-      if (wantsToShare) {
-        localStorage.setItem('fs.loc_asked', 'yes');
+      if (allowed) {
+        // Send to Cloudflare Worker
         fetch('https://fauxswiss-api.cheekhin.workers.dev', {
           method: 'POST',
-          headers: {'content-type': 'application/json'},
-          body: JSON.stringify({ consent: true, product: 'website', source: 'link', lang: 'en' })
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ consent: true, source: "website_click" })
         }).finally(() => {
-          window.location.href = waLink.href;
+          localStorage.setItem('enquiry_asked', 'yes');
+          window.location.href = link.href; // Open WhatsApp
         });
       } else {
-        localStorage.setItem('fs.loc_asked', 'no');
-        window.location.href = waLink.href;
+        localStorage.setItem('enquiry_asked', 'no');
+        window.location.href = link.href; // Open WhatsApp
       }
     }
   });
-  </script>
+</script>
 
 </body>
 </html>
